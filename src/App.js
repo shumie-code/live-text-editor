@@ -14,7 +14,12 @@ import {
 class App extends Component {
 
   state = {
-    editor: ""
+    editor: "",
+    name0: "",
+    begin0: "",
+    end0: "",
+    style0: "",
+    rules: 1
   }
 
   handleChange = (event) => {
@@ -24,14 +29,39 @@ class App extends Component {
     })
   }
 
+  rules = () => {
+
+  }
+
+    newFields = () => {
+      this.setState( (prevState) => {
+        let {rules}  = prevState
+        let fields = ['name', 'begin', 'end', 'style']
+        let inputValues = {}
+        fields.forEach( (field) => {
+          inputValues = {
+            ...inputValues,
+            [`${field}${rules}`]: ''
+          }
+        })
+        rules++ 
+        return {
+          rules, 
+          ...inputValues
+        }
+      })
+    }
 
   render() {
-    let {handleChange} = this
     let {value} = this.state
+    let {handleChange, newFields, rules} = this
     return (
       <Container>
         <Column>
-          <Button>New Rule</Button>
+        {rules()}
+          <Button
+          onClick={newFields}
+          >New Rule</Button>
         </Column>
         <Column>
           <Button>Random Text</Button>
