@@ -1,11 +1,11 @@
 export function spreadOperator(){
 
   // const sauces = ['bbq', 'buffaloe', 'honey mustard']
-  //
+  
   // const dressings = ['ranch', 'balsamic', 'thousand island']
-  //
+  
   // const superSecretSauce = [...sauces, ...dressings]
-  //
+  
   //
   // console.log(superSecretSauce)
 
@@ -17,7 +17,7 @@ export function spreadOperator(){
   //   peanutButter: 'crunchy',
   //   jelly: 'strawberry'  //it has two key-value pairs
   // }
-  //
+  
   // const sandwich = {  //we are going to add the properties
   //   breadSlices: 2,   // of condiments to this new object
   //   ...favoriteToppings    //by using an elipsis
@@ -35,8 +35,8 @@ export function spreadOperator(){
   //  //you can also do
   //
   // const sameSandwich = Object.assign({breadSlices: 2}, favoriteToppings)
-  //
+  
   // console.log('sameSandwich = ', sameSandwich)
-  //
+  
 
 }
