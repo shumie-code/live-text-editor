@@ -4,8 +4,11 @@ import App from './App'
 import * as serviceWorker from './serviceWorker'
 import {
    // constAndLet
+   // arrowFunctions
+   // destructuring
+   objAssemblyComputedProps
 } from './examples'
-
+objAssemblyComputedProps()
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
