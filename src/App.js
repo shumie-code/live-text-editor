@@ -11,6 +11,8 @@ import {
   Document,
   Column
 } from "./styled";
+import hlsjs from 'highlight.js';
+
 class App extends Component {
   state = {
     editor: "",
@@ -80,9 +82,16 @@ class App extends Component {
     });
   };
 
+  convertToMarkup = (text) => {
+    return{
+      __html: hljs.highlightAuto(text).value
+    }
+  }
+
+
   render() {
-    let { value } = this.state;
-    let { handleChange, newFields, rules } = this;
+    let { editor } = this.state;
+    let { handleChange, newFields, rules, convertToMarkup } = this;
     return (
       <Container>
         <Column>
@@ -92,8 +101,10 @@ class App extends Component {
         <Column>
           <Button>Random Text</Button>
           <Document>
-            <Editor name={"Editor"} value={value} onChange={handleChange} />
-            <Markup />
+            <Editor name={"Editor"} value={editor} onChange={handleChange} />
+            <Markup 
+              dangerouslySetInnerHTML={convertToMarkup(editor)}
+            />
           </Document>
         </Column>
       </Container>
