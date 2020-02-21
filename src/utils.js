@@ -78,6 +78,8 @@ let options = () => {
     }
 }
 
+
+
 export async function getRandomPoem() {
     try {
         let result = await fetch(shakespeareApi, options())
